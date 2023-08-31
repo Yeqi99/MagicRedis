@@ -5,6 +5,7 @@ import cn.origincraft.magic.function.results.ErrorResult;
 import cn.origincraft.magic.function.results.NullResult;
 import cn.origincraft.magic.magicredis.result.RedisResult;
 import cn.origincraft.magic.object.SpellContext;
+import cn.origincraft.magic.utils.VariableUtil;
 import dev.rgbmc.expression.functions.FunctionResult;
 import dev.rgbmc.expression.results.StringResult;
 import io.lettuce.core.RedisClient;
@@ -31,6 +32,15 @@ public class RedisPutFunction extends NormalFunction {
             RedisClient client = redisResult.getRedis();
             StatefulRedisConnection<String, String> connection = client.connect();
             RedisCommands<String, String> syncCommands = connection.sync();
+            if (args.size()>3){
+                FunctionResult arg4 = args.get(3);
+                if (arg4 instanceof StringResult) {
+                    StringResult stringResult3 = (StringResult) arg4;
+                    if (VariableUtil.tryInt(stringResult3.getString())){
+                        syncCommands.select(Integer.parseInt(stringResult3.getString()));
+                    }
+                }
+            }
             syncCommands.set(key,value);
             connection.close();
             return new StringResult(value);

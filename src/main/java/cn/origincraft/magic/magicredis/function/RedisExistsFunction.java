@@ -48,6 +48,25 @@ public class RedisExistsFunction extends NormalFunction {
             }else {
                 return new ErrorResult("UNKNOWN_ARGUMENT_TYPE", "Unsupported argument type.");
             }
+        }else if(args.size()==3){
+            FunctionResult arg1 = args.get(0);
+            FunctionResult arg2 = args.get(1);
+            FunctionResult arg3 = args.get(2);
+            if (arg1 instanceof StringResult && arg2 instanceof StringResult && arg3 instanceof StringResult){
+                StringResult stringResult1 = (StringResult) arg1;
+                StringResult stringResult2 = (StringResult) arg2;
+                StringResult stringResult3 = (StringResult) arg3;
+                String ip = stringResult1.getString();
+                String port = stringResult2.getString();
+                String password = stringResult3.getString();
+                try {
+                    RedisClient.create("redis://"+password+"@"+ip+":"+port);
+                } catch (RedisConnectionException e) {
+                    return new BooleanResult(false);
+                }
+            }else {
+                return new ErrorResult("UNKNOWN_ARGUMENT_TYPE", "Unsupported argument type.");
+            }
         }else {
             return new ErrorResult("UNKNOWN_ARGUMENT_TYPE", "Unsupported argument type.");
         }
