@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>MagicRedis</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -28,16 +28,19 @@
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
             <version>6.2.6.RELEASE</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>cn.origincraft.magic</groupId>
             <artifactId>Magic</artifactId>
             <version>1.0.10</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev.rgbmc</groupId>
             <artifactId>FastExpression</artifactId>
             <version>1.0.0-2e5db94</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
