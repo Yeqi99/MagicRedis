@@ -43,8 +43,9 @@ public class RedisGetFunction extends NormalFunction {
                 connection.close();
                 return new NullResult();
             }
+            String s =syncCommands.get(key);
             connection.close();
-            return new StringResult(syncCommands.get(key));
+            return new StringResult(s);
         }else {
             return new ErrorResult("UNKNOWN_ARGUMENT_TYPE", "Unsupported argument type.");
         }

@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>MagicRedis</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
