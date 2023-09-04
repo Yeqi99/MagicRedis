@@ -6,7 +6,7 @@
 
     <groupId>cn.origincraft.magic</groupId>
     <artifactId>MagicRedis</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>cn.origincraft.magic</groupId>
             <artifactId>Magic</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.13</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
