@@ -6,7 +6,7 @@
 
     <groupId>cn.origincraft.magic</groupId>
     <artifactId>MagicRedis</artifactId>
-    <version>1.0.9</version>
+    <version>1.0.10</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -32,13 +32,13 @@
         <dependency>
             <groupId>cn.origincraft.magic</groupId>
             <artifactId>Magic</artifactId>
-            <version>1.0.13</version>
+            <version>1.0.14</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev.rgbmc</groupId>
             <artifactId>FastExpression</artifactId>
-            <version>1.0.0-2e5db94</version>
+            <version>1.0.0-a0aa2c1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
